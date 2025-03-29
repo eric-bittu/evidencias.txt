@@ -2,14 +2,9 @@
     font-family: "Lugrasimo", cursive;
     font-size: 180px;;
     text-align:center;
-    color: #f0f0bd;
+    color: #afcad6;
     font-weight: bold; 
-    text-shadow:
-         -6px -6px 10px black,  
-         6px -6px 10px black,  
-         -6px  6px 10px black,  
-         6px  6px 10px black,
-         0px 0px 15px black;
+    text-shadow: 1px 1px 5px #e0b4b4;
 
 }
 .container {
@@ -22,14 +17,9 @@ button {    /* Usado para configurar a fonte do botão index.html */
     font-family: "Lugrasimo", cursive;
     border: none;
     background:none;
-    color: #ffffff;
+    color: #afcad6;
     cursor: pointer;
-    text-shadow:
-    -6px -6px 10px black,  
-    6px -6px 10px black,  
-    -6px  6px 10px black,  
-    6px  6px 10px black,
-    0px 0px 15px black;
+    text-shadow: 1px 1px 5px #e0b4b4;
 }
 button:hover {
     padding: 20px 35px;
