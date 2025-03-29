@@ -13,7 +13,7 @@
 
 button {    /* Usado para configurar a fonte do botão index.html */
     padding:1px 1px;
-    font-size: 100px;
+    font-size: 75px;
     font-family: "Lugrasimo", cursive;
     border: none;
     background:none;
@@ -23,7 +23,7 @@ button {    /* Usado para configurar a fonte do botão index.html */
 }
 button:hover {
     padding: 20px 35px;
-    font-size: 115px;
+    font-size: 80px;
 }
 
 body {  /* Background do jogo */
