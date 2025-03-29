@@ -1,7 +1,7 @@
  base-jogo
-const botao = document.querySelector('#inicio');
-if (botao) {
-    botao.addEventListener('click', () => {
+const botaoinicio = document.querySelector('#inicio');
+if (botaoinicio) {
+    botaoinicio.addEventListener('click', () => {
         window.location.href = 'sobre.html';
     });
 }
@@ -37,12 +37,4 @@ if (botaoAlterar && descricao && container) {
     });
 }
 
-// Seleciona o botão
-const botao = document.querySelector('.container button');
 
-// Adiciona o evento de clique
-botao.addEventListener('click', () => {
-    // Redireciona para a página fase-inicial.html
-    window.location.href = 'sobre.html';
-});
-main

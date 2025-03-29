@@ -1,34 +1,4 @@
-.titulo h1{     /* Usado para configurar a fonte no título do index.html */
-    font-family: "Lugrasimo", cursive;
-    font-size: 180px;;
-    text-align:center;
-    color: #afcad6;
-    font-weight: bold; 
-    text-shadow: 1px 1px 5px #e0b4b4;
 
-}
-.container {
-    text-align: center; /* Alinha horizontalmente */
-}
-
-button {    /* Usado para configurar a fonte do botão index.html */
-    padding:1px 1px;
-    font-size: 75px;
-    font-family: "Lugrasimo", cursive;
-    border: none;
-    background:none;
-    color: #afcad6;
-    cursor: pointer;
-    text-shadow: 1px 1px 5px #e0b4b4;
-}
-button:hover {
-    padding: 20px 35px;
-    font-size: 80px;
-}
-
-body {  /* Background do jogo */
-    background: linear-gradient(to right, rgb(1, 1, 83), rgb(114, 0, 0));
-}
 .sobre { /* Titulo da fase  */
     font-family: "Lugrasimo", cursive;
     font-size: 60px;;
@@ -37,4 +7,103 @@ body {  /* Background do jogo */
     
     text-shadow: 1px 1px 5px #e0b4b4;
 
+}
+:root {
+    --blood-red: #8b0000;
+    --old-paper: #f5e8c0;
+    --ink: #1a1a1a;
+    --dark-bg: #121212;
+    --dark-text: #e0e0e0;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background: var(--dark-bg) url('https://i.imgur.com/JYrGQ4a_dark.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: var(--dark-text);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+body.light-mode {
+    background: var(--old-paper) url('https://i.imgur.com/JYrGQ4a.jpg') no-repeat center center fixed;
+    color: var(--ink);
+}
+
+#main-menu {
+    background-color: rgba(30, 30, 30, 0.9);
+    width: 80%;
+    max-width: 600px;
+    padding: 30px;
+    border: 3px double var(--blood-red);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+body.light-mode #main-menu {
+    background-color: rgba(245, 232, 192, 0.9);
+}
+
+h1 {
+    color: var(--blood-red);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-style: italic;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--blood-red);
+    padding-bottom: 15px;
+}
+
+.case-intro {
+    text-align: left;
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.btn {
+    background-color: var(--blood-red);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    margin: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s;
+    border: 1px solid var(--ink);
+}
+
+.btn:hover {
+    background-color: #6b0000;
+    transform: translateY(-2px);
+}
+
+.settings {
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+#theme-toggle {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+body.light-mode #theme-toggle {
+    background: #ddd;
+    color: #333;
 }
