@@ -1,21 +1,173 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap" rel="stylesheet">
-    <title>Evidências.txt</title>
+    <title>CASO 137-A | Detetive Textual</title>
+    <style>
+        :root {
+            --blood-red: #8b0000;
+            --old-paper: #f5e8c0;
+            --ink: #1a1a1a;
+            --dark-bg: #121212;
+            --dark-text: #e0e0e0;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: var(--dark-bg) url('https://i.imgur.com/JYrGQ4a_dark.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: var(--dark-text);
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+        }
+        
+        body.light-mode {
+            background: var(--old-paper) url('https://i.imgur.com/JYrGQ4a.jpg') no-repeat center center fixed;
+            color: var(--ink);
+        }
+        
+        #main-menu {
+            background-color: rgba(30, 30, 30, 0.9);
+            width: 80%;
+            max-width: 600px;
+            padding: 30px;
+            border: 3px double var(--blood-red);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            transition: all 0.5s ease;
+        }
+        
+        body.light-mode #main-menu {
+            background-color: rgba(245, 232, 192, 0.9);
+        }
+        
+        h1 {
+            color: var(--blood-red);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--blood-red);
+            padding-bottom: 15px;
+        }
+        
+        .case-intro {
+            text-align: left;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            background-color: var(--blood-red);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 10px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+            border: 1px solid var(--ink);
+        }
+        
+        .btn:hover {
+            background-color: #6b0000;
+            transform: translateY(-2px);
+        }
+        
+        .settings {
+            margin-top: 30px;
+            font-size: 0.9rem;
+        }
+        
+        #theme-toggle {
+            background: #333;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        
+        body.light-mode #theme-toggle {
+            background: #ddd;
+            color: #333;
+        }
+    </style>
 </head>
-<body>
-    <section class="titulo">
+<body class="dark-mode">
+    <div id="main-menu">
         <h1>Evidencias.txt</h1>
-        <div class="container">
-            <button>Começar</button>
-        </div>        
-    </section>
+        <p class="subtitle">O assasinato de <strong>Eduardo Vasquez.</strong></p>
+        
+        <div class="case-intro">
+            <p> <strong>Carlos Ribeiro</strong>, um investigador experiente, é chamado para resolver o caso, mas nada é o que parece. Com múltiplos suspeitos, segredos obscuros e reviravoltas inesperadas, suas escolhas determinarão o desfecho dessa investigação.</p>
+            <p>Você encontrará a verdade ou cairá nas armadilhas de um jogo mortal?</p>
+        </div>
+        
+        <button class="btn" id="start-btn">INICIAR INVESTIGAÇÃO</button>
+        <button class="btn" id="load-btn">CARREGAR JOGO</button>
+        
+        <div class="settings">
+            <button id="theme-toggle">MODO CLARO ☀️</button>
+        </div>
+    </div>
+
+    <script>
+        // Verifica preferência salva
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.body.className = savedTheme + '-mode';
+        
+        // Atualiza texto do botão
+        updateButtonText();
+        
+        // Alternador de tema
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            document.body.classList.toggle('light-mode');
+            document.body.classList.toggle('dark-mode');
+            
+            const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+            localStorage.setItem('theme', currentTheme);
+            
+            updateButtonText();
+        });
+        
+        function updateButtonText() {
+            const isDark = document.body.classList.contains('dark-mode');
+            document.getElementById('theme-toggle').textContent = 
+                isDark ? 'MODO CLARO ☀️' : 'MODO ESCURO 🌙';
+        }
+        
+        // Inicia o jogo
+        document.getElementById('start-btn').addEventListener('click', function() {
+            window.location.href = "jogo.html";
+        });
+        
+        // Efeito de máquina de escrever
+        const subtitle = document.querySelector('.subtitle');
+        const originalText = subtitle.textContent;
+        subtitle.textContent = '';
+        
+        let i = 0;
+        const typeWriter = setInterval(() => {
+            if (i < originalText.length) {
+                subtitle.textContent += originalText.charAt(i);
+                i++;
+            } else {
+                clearInterval(typeWriter);
+            }
+        }, 50);
+    </script>
 </body>
-<script src="scripts.js"></script>
 </html>
