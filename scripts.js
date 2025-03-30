@@ -1,40 +1,43 @@
- base-jogo
-const botaoinicio = document.querySelector('#inicio');
-if (botaoinicio) {
-    botaoinicio.addEventListener('click', () => {
-        window.location.href = 'sobre.html';
-    });
+// Verifica preferência salva
+const savedTheme = localStorage.getItem('theme') || 'dark';
+document.body.className = savedTheme + '-mode';
+
+// Atualiza texto do botão
+updateButtonText();
+
+// Alternador de tema
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('light-mode');
+    document.body.classList.toggle('dark-mode');
+    
+    const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+    localStorage.setItem('theme', currentTheme);
+    
+    updateButtonText();
+});
+
+function updateButtonText() {
+    const isDark = document.body.classList.contains('dark-mode');
+    document.getElementById('theme-toggle').textContent = 
+        isDark ? 'MODO CLARO ☀️' : 'MODO ESCURO 🌙';
 }
 
-const botaoAlterar = document.querySelector('#alterar-conteudo');
-const descricao = document.querySelector('#descricao');
-const container = document.querySelector('.container'); // Seleciona o container onde os botões serão adicionados
+// Inicia o jogo
+document.getElementById('start-btn').addEventListener('click', function() {
+    window.location.href = "jogo.html";
+});
 
-if (botaoAlterar && descricao && container) {
-    botaoAlterar.addEventListener('click', () => {
-        // Remove o botão original
-        botaoAlterar.remove();
+// Efeito de máquina de escrever
+const subtitle = document.querySelector('.subtitle');
+const originalText = subtitle.textContent;
+subtitle.textContent = '';
 
-        // Altera o texto do parágrafo
-        descricao.textContent = 'Novo conteúdo dinâmico: A investigação toma um rumo inesperado, e novas pistas surgem!';
-
-        // Cria novos botões dinamicamente
-        const novoBotao1 = document.createElement('button');
-        novoBotao1.textContent = 'Novo Botão 1';
-        novoBotao1.addEventListener('click', () => {
-            alert('Você clicou no Novo Botão 1!');
-        });
-
-        const novoBotao2 = document.createElement('button');
-        novoBotao2.textContent = 'Novo Botão 2';
-        novoBotao2.addEventListener('click', () => {
-            alert('Você clicou no Novo Botão 2!');
-        });
-
-        // Adiciona os novos botões ao container
-        container.appendChild(novoBotao1);
-        container.appendChild(novoBotao2);
-    });
-}
-
-
+let i = 0;
+const typeWriter = setInterval(() => {
+    if (i < originalText.length) {
+        subtitle.textContent += originalText.charAt(i);
+        i++;
+    } else {
+        clearInterval(typeWriter);
+    }
+}, 50);
