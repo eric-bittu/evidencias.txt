@@ -18,7 +18,7 @@
 
 body {
     font-family: 'Courier New', monospace;
-    background: var(--dark-bg) url('https://i.imgur.com/JYrGQ4a_dark.jpg') no-repeat center center fixed;
+    background: var(--dark-bg)no-repeat center center fixed;
     background-size: cover;
     color: var(--dark-text);
     margin: 0;
@@ -31,7 +31,7 @@ body {
 }
 
 body.light-mode {
-    background: var(--old-paper) url('https://i.imgur.com/JYrGQ4a.jpg') no-repeat center center fixed;
+    background: var(--old-paper)  no-repeat center center fixed;
     color: var(--ink);
 }
 
