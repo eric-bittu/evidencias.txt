@@ -16,7 +16,6 @@
             <p> <strong>Carlos Ribeiro</strong>, um investigador experiente, é chamado para resolver o caso, mas nada é o que parece. Com múltiplos suspeitos, segredos obscuros e reviravoltas inesperadas, suas escolhas determinarão o desfecho dessa investigação.</p>
             <p>Você encontrará a verdade ou cairá nas armadilhas de um jogo mortal?</p>
         </div>
-        
         <button class="btn" id="start-btn">INICIAR INVESTIGAÇÃO</button>
         <button class="btn" id="load-btn">CARREGAR JOGO</button>
         
@@ -24,51 +23,6 @@
             <button id="theme-toggle">MODO CLARO ☀️</button>
         </div>
     </div>
-
-    <script>
-        // Verifica preferência salva
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.body.className = savedTheme + '-mode';
-        
-        // Atualiza texto do botão
-        updateButtonText();
-        
-        // Alternador de tema
-        document.getElementById('theme-toggle').addEventListener('click', function() {
-            document.body.classList.toggle('light-mode');
-            document.body.classList.toggle('dark-mode');
-            
-            const currentTheme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
-            localStorage.setItem('theme', currentTheme);
-            
-            updateButtonText();
-        });
-        
-        function updateButtonText() {
-            const isDark = document.body.classList.contains('dark-mode');
-            document.getElementById('theme-toggle').textContent = 
-                isDark ? 'MODO CLARO ☀️' : 'MODO ESCURO 🌙';
-        }
-        
-        // Inicia o jogo
-        document.getElementById('start-btn').addEventListener('click', function() {
-            window.location.href = "jogo.html";
-        });
-        
-        // Efeito de máquina de escrever
-        const subtitle = document.querySelector('.subtitle');
-        const originalText = subtitle.textContent;
-        subtitle.textContent = '';
-        
-        let i = 0;
-        const typeWriter = setInterval(() => {
-            if (i < originalText.length) {
-                subtitle.textContent += originalText.charAt(i);
-                i++;
-            } else {
-                clearInterval(typeWriter);
-            }
-        }, 50);
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
