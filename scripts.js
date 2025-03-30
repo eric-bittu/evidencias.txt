@@ -407,7 +407,8 @@ document.addEventListener("DOMContentLoaded", () => {
             },
         };
 
-        let currentState = "start";
+       // Carrega o estado salvo ou começa no estado inicial
+        let currentState = localStorage.getItem("gameState") || "start";
 
         function updateGameState() {
             const state = gameStates[currentState];
@@ -431,12 +432,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 btn.textContent = button.text;
                 btn.addEventListener("click", () => {
                     currentState = button.nextState;
+                    localStorage.setItem("gameState", currentState); // Salva o estado atual no localStorage
                     updateGameState();
                 });
                 buttonsContainer.appendChild(btn);
             });
-        }
+}
 
-        updateGameState();
-    }
-});
+// Chama a função para atualizar o estado inicial
+updateGameState();
+}});
