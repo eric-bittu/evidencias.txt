@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 subtitle: "Desfecho",
                 description: "Felipe, consumido pelo ciúme e ressentimento, confessa o crime. Você resolve o caso com sucesso.",
                 buttons: [
-                    { id: "acao1-btn", text: "Voltar ao Menu Principal", nextState: "start" }
+                    { id: "acao1-btn", text: "Início", nextState: "start" }
                 ]
             },
             
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 subtitle: "Desfecho",
                 description: "Após confrontar Marcos, você descobre que ele estava envolvido em desvios financeiros, mas não teve envolvimento no assassinato de Breno. Ele é inocentado.",
                 buttons: [
-                    { id: "acao1-btn", text: "Voltar ao Menu Principal", nextState: "start" }
+                    { id: "acao1-btn", text: "Início", nextState: "start" }
                 ]
             },
             
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 subtitle: "Desfecho",
                 description: "Melina admite ter apagado as imagens para proteger a empresa, mas não teve envolvimento no assassinato de Breno. Ela é inocentada.",
                 buttons: [
-                    { id: "acao1-btn", text: "Voltar ao Menu Principal", nextState: "start" }
+                    { id: "acao1-btn", text: "Início", nextState: "start" }
                 ]
             },
             wrongAccusation: {
