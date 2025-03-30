@@ -204,13 +204,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 title: "Final: Acusação Errada",
                 subtitle: "Desfecho",
                 description: "Você acusou a pessoa errada. O verdadeiro culpado escapa, e o caso permanece sem solução.",
-                buttons: []
+                buttons: [{ id: "acao1-btn", text: "Início", nextState: "start" }]
             },
             detectiveDeath: {
                 title: "Final: O Detetive Morre",
                 subtitle: "Desfecho",
                 description: "Durante a investigação, você comete um erro fatal e é morto pelo verdadeiro culpado.",
-                buttons: []
+                buttons: [{ id: "acao1-btn", text: "Início", nextState: "start" }]
             },
             // Fase: Analisar o Histórico de Chamadas
             callHistory: {
