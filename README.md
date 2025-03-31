@@ -1,6 +1,10 @@
 Um investigador experiente, é chamado para resolver o caso, mas nada é o que parece. Com múltiplos suspeitos, segredos obscuros e reviravoltas inesperadas, suas escolhas determinarão o desfecho dessa investigação.Você encontrará a verdade ou cairá nas armadilhas de um jogo mortal?
 
 ---
+## Link para jogar remotamente
+
+https://evidencias-txt.vercel.app/
+---
 
 ## 🚀 Como Jogar
 
